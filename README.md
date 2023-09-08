@@ -12,33 +12,31 @@ Visual surveillance has exponentially increased the growth of security devices a
 A face and & identification program intended to detect & identify faces from pictures that are of size 30x30 pixels using EDSR image super-resolution, whereas gait recognition
 The input for gait recognition is a set of silhouettes (there are NOT ANY constrains on an input, which means it can contain any number of non-consecutive silhouettes filmed under different viewpoints with different walking conditions).
 
-```mermaid
-graph TD
-    A[Project] --> B[Config]
-    A --> C[Data Tool]
-    A --> D[Main]
-    A --> E[Feature]
-    E --> F[HOG]
-    E --> G[Init]
-    E --> H[HOG Cache]
-    E --> I[Silhouette Extraction] --> J[Silhouette Score] --> K[Silhouette Mask]
-    A --> L[Identification]
-    L --> M[YOLO]
-    M --> N[Object Detection]
-    M --> O[Init]
-    N --> P[Face Recognition]
-    O --> P
-    N --> Q[Silhouette Score]
-    O --> Q
-    P --> R[Personal ID]
-    Q --> R
-    P --> S[Weighted Average]
-    Q --> S
-    A --> T[Tool]
-    T --> U[Init]
-    U --> V[Config Cache]
-    U --> W[Data Tool Cache]
-    U --> X[Tool Cache]
-    A --> Y[Readme]
+flowchart LR
+
+subgraph Preprocessing
+  A((Видео))
+  B((Маска силуэта))
+  A --> B
+end
+
+subgraph "Распознавание по походке"
+  B --> C{silhouette score}
+  C --> D(Модуль 1)
+end
+
+subgraph "Идентификация по лицу"
+  B --> E(YOLO)
+  E --> F(Модуль 2)
+end
+
+subgraph "Совместная обработка"
+  D --> G(Результат 1)
+  F --> G
+  G --> H(Weighted Average)
+end
+
+H --> I((Personal ID))
+
 
 
