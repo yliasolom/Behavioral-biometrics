@@ -21,14 +21,24 @@ graph TD
     E --> F[HOG]
     E --> G[Init]
     E --> H[HOG Cache]
-    A --> I[Model]
-    I --> J[Base Model]
-    I --> K[Init]
-    I --> L[Models]
-    I --> M[Model Cache]
-    A --> N[Tool]
-    N --> O[Init]
-    O --> P[Config Cache]
-    O --> Q[Data Tool Cache]
-    O --> R[Tool Cache]
-    A --> S[Readme]
+    E --> I[Silhouette Extraction] --> J[Silhouette Score] --> K[Silhouette Mask]
+    A --> L[Identification]
+    L --> M[YOLO]
+    M --> N[Object Detection]
+    M --> O[Init]
+    N --> P[Face Recognition]
+    O --> P
+    N --> Q[Silhouette Score]
+    O --> Q
+    P --> R[Personal ID]
+    Q --> R
+    P --> S[Weighted Average]
+    Q --> S
+    A --> T[Tool]
+    T --> U[Init]
+    U --> V[Config Cache]
+    U --> W[Data Tool Cache]
+    U --> X[Tool Cache]
+    A --> Y[Readme]
+
+
