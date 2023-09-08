@@ -12,6 +12,7 @@ Visual surveillance has exponentially increased the growth of security devices a
 A face and & identification program intended to detect & identify faces from pictures that are of size 30x30 pixels using EDSR image super-resolution, whereas gait recognition
 The input for gait recognition is a set of silhouettes (there are NOT ANY constrains on an input, which means it can contain any number of non-consecutive silhouettes filmed under different viewpoints with different walking conditions).
 
+```mermiad
 flowchart LR
 
 subgraph Preprocessing
