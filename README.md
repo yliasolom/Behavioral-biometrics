@@ -17,25 +17,30 @@ flowchart LR
 
 subgraph Preprocessing
   A((Видео))
-  B((Маска силуэта))
+  B((YOLO))
   A --> B
 end
 
+subgraph "Процессинг кадров" 
+  B --> C(Нарезание кадров)
+  C --> D(Маска силуэта)
+end
+
 subgraph "Распознавание по походке"
-  B --> C{silhouette score}
-  C --> D(Модуль 1)
+  D --> E(GaitRecognition)
 end
 
 subgraph "Идентификация по лицу"
-  B --> E(YOLO)
-  E --> F(Модуль 2)
+  D --> G(FaceRecognition)
 end
 
 subgraph "Совместная обработка"
-  D --> G(Результат 1)
-  F --> G
-  G --> H(Weighted Average)
+  E --> H((Weighted Average))
+  G --> H
 end
+
+H --> J((Personal ID))
+
 
 H --> I((Personal ID))
 
