@@ -1,8 +1,9 @@
 # MANUAL:
 
 1.   DOWNLOAD weights to folder weights/ by this link: [model.pkl](https://drive.google.com/file/d/1-FCShfmCxACnNUySTAHCRpkGo_ExXMz2/view?usp=sharing)
+2.   FOR prediction run predict.py with path to image [my_testing.jpg](https://i.pinimg.com/originals/9e/1c/c9/9e1cc9329b82ad0084d5c4c30757d469.jpg)
 
-
+  see example in notebook
 
 
 
