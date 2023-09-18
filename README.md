@@ -1,9 +1,10 @@
 # MANUAL:
-1. INSTALL  `pip install git+https://github.com/paoloripamonti/face-recognition`
+1. CLONE this repo
+1. INSTALL  `pip install git+https://github.com/paoloripamonti/face-recognition` - maybe there might be some troubles, in this case just clone this repo
 2. DOWNLOAD weights to folder weights/ by this link: [model.pkl](https://drive.google.com/file/d/1-FCShfmCxACnNUySTAHCRpkGo_ExXMz2/view?usp=sharing)
-3. FOR prediction run predict.py with path to image [my_testing.jpg](https://i.pinimg.com/originals/9e/1c/c9/9e1cc9329b82ad0084d5c4c30757d469.jpg)
+3. FOR prediction run `python src/predict.py` with path to image --image-path [my_testing.jpg](https://i.pinimg.com/originals/9e/1c/c9/9e1cc9329b82ad0084d5c4c30757d469.jpg)
 
-  see example in notebook
+  see example in notebook how it might work
 
 
 
