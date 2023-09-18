@@ -1,3 +1,11 @@
+# MANUAL:
+
+1.   DOWNLOAD weights to folder weights/ by this link: [model.pkl](https://drive.google.com/file/d/1-FCShfmCxACnNUySTAHCRpkGo_ExXMz2/view?usp=sharing)
+
+
+
+
+
 # Behavioral-biometrics
 Person identification of gait and related factors in behavioral biometrics
 
