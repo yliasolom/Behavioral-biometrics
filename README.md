@@ -1,15 +1,14 @@
 # MANUAL:
-1. CLONE this repo
-1. INSTALL  `pip install git+https://github.com/paoloripamonti/face-recognition` - maybe there might be some troubles, in this case just clone this repo
-2. DOWNLOAD weights to folder weights/ by this link: [model.pkl](https://drive.google.com/file/d/1-FCShfmCxACnNUySTAHCRpkGo_ExXMz2/view?usp=sharing)
-3. FOR prediction run `python src/predict.py` with path to image --image-path [my_testing.jpg](https://i.pinimg.com/originals/9e/1c/c9/9e1cc9329b82ad0084d5c4c30757d469.jpg)
 
-  see example in notebook how it might work
-
+СКЛОНИРУЙТЕ (CLONE) этот репозиторий.
+УСТАНОВИТЕ необходимые зависимости с помощью команды pip install git+https://github.com/paoloripamonti/face-recognition. Возможно, могут возникнуть некоторые проблемы при установке, в этом случае просто склонируйте этот репозиторий.
+ЗАГРУЗИТЕ веса (weights) в папку weights/, следуя этой ссылке: model.pkl.
+ДЛЯ выполнения предсказаний (prediction) запустите python src/predict.py с указанием пути к изображению с помощью параметра --image-path. Например: --image-path [my_testing.jpg](https://i.pinimg.com/originals/9e/1c/c9/9e1cc9329b82ad0084d5c4c30757d469.jpg).
+Посмотрите пример использования в ноутбуке, чтобы понять, как это может работать.
 
 
 # Behavioral-biometrics
-Person identification of gait and related factors in behavioral biometrics
+Идентификация личности на основе походки и смежных факторов в поведенческой биометрии
 
 ### Team:
 - Kirill Sheshulin
@@ -17,10 +16,9 @@ Person identification of gait and related factors in behavioral biometrics
 - Nikita Shubny
 - Julia Solomennikowa
 
-Visual surveillance has exponentially increased the growth of security devices and systems in the digital era. Gait- and face-recognition-based person identification is an emerging biometric modality for automatic visual surveillance and monitoring as the walking patterns highly correlate to the subject’s identity. The scientific research on person identification using gait and low-resolution face has grown dramatically over the past two decades due to its several benefits. It does not require active collaboration from users and can be performed without their cooperation.
+Визуальное наблюдение в цифровую эпоху взорвало рост устройств и систем безопасности. Идентификация личности на основе походки и лица - это развивающаяся биометрическая модальность для автоматического визуального наблюдения и мониторинга, поскольку образцы походки тесно коррелируют с личностью субъекта. Научные исследования по идентификации личности с использованием походки и низкоразрешенного лица резко выросли за последние два десятилетия из-за нескольких преимуществ. Это не требует активного сотрудничества пользователей и может выполняться без их согласия.
 
-A face and & identification program intended to detect & identify faces from pictures that are of size 30x30 pixels using EDSR image super-resolution, whereas gait recognition
-The input for gait recognition is a set of silhouettes (there are NOT ANY constrains on an input, which means it can contain any number of non-consecutive silhouettes filmed under different viewpoints with different walking conditions).
+Программа идентификации лиц и лица предназначена для обнаружения и идентификации лиц на изображениях размером 30x30 пикселей с использованием суперразрешения изображений EDSR, в то время как идентификация по походке осуществляется на основе набора силуэтов (здесь НЕТ ОГРАНИЧЕНИЙ на ввод, что означает, что он может содержать любое количество несмежных силуэтов, снятых под разными углами обзора при разных условиях ходьбы).
 
 ```mermaid
 flowchart LR
@@ -54,4 +52,6 @@ H --> J((Personal ID))
 
 
 
+# Цели и задачи
+Основная цель проекта - улучшение процессов аутентификации пользователей путем автоматизации идентификации личности на основе поведенческих биометрических данных. Основные задачи проекта включают:
 
