@@ -1,56 +1,39 @@
-# MANUAL:
+# Context-Sensitive-Temporal-Feature-Learning-for-Gait-Recognition
+ICCV 2021 PAPER is available at <a href="https://openaccess.thecvf.com/content/ICCV2021/html/Huang_Context-Sensitive_Temporal_Feature_Learning_for_Gait_Recognition_ICCV_2021_paper.html" title="CSTL">Context-Sensitive-Temporal-Feature-Learning-for-Gait-Recognition</a>.
 
-СКЛОНИРУЙТЕ (CLONE) этот репозиторий.
+## Abstract
+Although gait recognition has drawn increasing research attention recently, it remains challenging to learn discriminative temporal representation since the silhouette differences are quite subtle in spatial domain. Inspired by the observation that humans can distinguish gaits of different subjects by adaptively focusing on temporal sequences with different time scales, we propose a context-sensitive temporal feature learning (CSTL) network in this paper, which aggregates temporal features in three scales to obtain motion representation according to the temporal contextual information. Specifically, CSTL introduces relation modeling among multi-scale features to evaluate feature importances, based on which network adaptively enhances more important scale and suppresses less important scale. Besides that, we propose a salient spatial feature learning (SSFL) module to tackle the misalignment problem caused by temporal operation, e.g., temporal convolution. SSFL recombines a frame of salient spatial features by extracting the most discriminative parts across the whole sequence. In this way, we achieve adaptive temporal learning and salient spatial mining simultaneously. Extensive experiments conducted on two datasets demonstrate the state-of-the-art performance. On CASIA-B dataset, we achieve rank-1 accuracies of 98.0%, 95.4% and 87.0% under normal walking, bag-carrying and coat-wearing conditions. On OU-MVLP dataset, we achieve rank-1 accuracy of 90.2%.
 
-УСТАНОВИТЕ необходимые зависимости с помощью команды pip install git+https://github.com/paoloripamonti/face-recognition. Возможно, могут возникнуть некоторые проблемы при установке, в этом случае просто склонируйте этот репозиторий.
+## Framework
+<div align=center><img src="img/framework.jpg"><img/></div>
 
-ЗАГРУЗИТЕ веса (weights) в папку weights/, следуя этой ссылке: model.pkl.
+## Result
+<div align=center><img src="img/casia-b.jpg"><img/></div>
+<div align=center><img src="img/ou-mvlp.jpg" width="500"><img/></div>
 
-ДЛЯ выполнения предсказаний (prediction) запустите python src/predict.py с указанием пути к изображению с помощью параметра --image-path. Например: --image-path [my_testing.jpg](https://i.pinimg.com/originals/9e/1c/c9/9e1cc9329b82ad0084d5c4c30757d469.jpg).
+## Note
+Due to the 64 x 44 silhouettes are in a low resolution, the experiment results will oscillate from time to time. Therefore, we highly recommend you guys to conduct experiments with 128 x 88 resolution on CASIA-B dataset, which produces relatively stable results.
 
-Посмотрите пример использования в ноутбуке, чтобы понять, как это может работать.
+## Usage
+The dataset path can be set in config.py.
 
+Train command: 
+```
+python train.py
+```
 
-# Behavioral-biometrics
-Идентификация личности на основе походки и смежных факторов в поведенческой биометрии
-
-### Team:
-- Kirill Sheshulin
-- Kirill Zarubin
-- Nikita Shubny
-- Julia Solomennikowa
-
-Визуальное наблюдение в цифровую эпоху взорвало рост устройств и систем безопасности. Идентификация личности на основе походки и лица - это развивающаяся биометрическая модальность для автоматического визуального наблюдения и мониторинга, поскольку образцы походки тесно коррелируют с личностью субъекта. Научные исследования по идентификации личности с использованием походки и низкоразрешенного лица резко выросли за последние два десятилетия из-за нескольких преимуществ. Это не требует активного сотрудничества пользователей и может выполняться без их согласия.
-
-Программа идентификации лиц и лица предназначена для обнаружения и идентификации лиц на изображениях размером 30x30 пикселей с использованием суперразрешения изображений EDSR, в то время как идентификация по походке осуществляется на основе набора силуэтов (здесь НЕТ ОГРАНИЧЕНИЙ на ввод, что означает, что он может содержать любое количество несмежных силуэтов, снятых под разными углами обзора при разных условиях ходьбы).
-
-```mermaid
-flowchart LR
-
-subgraph Preprocessing
-  A((Видео))
-  B((YOLO))
-  A --> B
-end
-
-subgraph "Процессинг кадров" 
-  B --> C(Нарезание кадров)
-  C --> D(Маска силуэта)
-end
-
-subgraph "Распознавание по походке"
-  D --> E(GaitRecognition)
-end
-
-subgraph "Идентификация по лицу"
-  D --> G(FaceRecognition)
-end
-
-subgraph "Совместная обработка"
-  E --> H((Weighted Average))
-  G --> H
-end
-
-H --> J((Personal ID))
-
-
+Inference command:
+```
+python test.py
+```
+## Citation
+Citation Format:
+```
+@inproceedings{huang2021context, 
+  title={Context-Sensitive Temporal Feature Learning for Gait Recognition}, 
+  author={Huang, Xiaohu and Zhu, Duowang and Wang, Hao and Wang, Xinggang and Yang, Bo and He, Botao and Liu, Wenyu and Feng, Bin},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={12909--12918},
+  year={2021}
+}
+```
