@@ -107,7 +107,6 @@ style Prep fill:#86c7e9,stroke:#ffffff,stroke-width:2px;
 style Modeling fill:#a2d5a5,stroke:#ffffff,stroke-width:2px;
 style Optimization fill:#ffb347,stroke:#ffffff,stroke-width:2px;
 style TechDebt fill:#f0a6ca,stroke:#ffffff,stroke-width:2px;
-style Additional fill:#e0e0e0,stroke:#ffffff,stroke-width:2px;
 
 subgraph Prep
   A((Исходные данные))
@@ -134,14 +133,6 @@ subgraph TechDebt
   H((Подготовка данных и тестирование на пилоте))
   G --> H
   F --> G
-end
-
-subgraph Additional
-  I((Дополнительные шаги))
-  A --> I
-  C --> I
-  E --> I
-  H --> I
 end
 ```
 ########################################################################
