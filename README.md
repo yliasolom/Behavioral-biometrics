@@ -4,7 +4,7 @@
 
 УСТАНОВИТЕ необходимые зависимости с помощью команды pip install -r requirements.txt (только с GPU).
 
-ЗАГРУЗИТЕ [последнюю версию модели] (https://github.com/jackhanyuan/GaitRecognitionSystem/releases/latest) и разархивируйте сжатый файл в папку `model/gait/output`.
+ЗАГРУЗИТЕ [последнюю версию модели](https://github.com/jackhanyuan/GaitRecognitionSystem/releases/latest) и разархивируйте сжатый файл в папку `model/gait/output`.
 
 Для выполнения предсказаний:
 ```
