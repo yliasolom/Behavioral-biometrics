@@ -1,12 +1,12 @@
 # MANUAL:
 
-СКЛОНИРУЙТЕ (CLONE) этот репозиторий.
+СКЛОНИРУЙТЕ репозиторий.
 
 УСТАНОВИТЕ необходимые зависимости с помощью команды pip install -r requirements.txt (только с GPU).
 
 ЗАГРУЗИТЕ [последнюю версию модели] [https://github.com/jackhanyuan/GaitRecognitionSystem/releases/latest] и разархивируйте сжатый файл в папку model/gait/output.
 
-ДЛЯ выполнения предсказаний:
+Для выполнения предсказаний:
 ```
 python main.py
 ```
