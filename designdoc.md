@@ -103,25 +103,25 @@
 ```mermaid
 flowchart TB
 
-subgraph cluster_1
+subgraph Prep
   A((Исходные данные))
   B((Подготовка данных))
   A --> B
 end
 
-subgraph cluster_2
+subgraph Modeling
   C((Выбор и обучение модели))
   D((Оценка модели))
   C --> D
 end
 
-subgraph cluster_3
+subgraph Optimization
   E((Тюнинг и оптимизация))
   F((Тестирование и оценка результатов))
   E --> F
 end
 
-subgraph cluster_4
+subgraph TechDebt
   G((Оптимизация кода и обработка ошибок))
   H((Подготовка данных и тестирование на пилоте))
   G --> H
@@ -133,7 +133,6 @@ B --> C
 D --> E
 F --> G
 H --> I
-
 ```
 ########################################################################
 #### 2.3. Этапы решения задачи `Data Scientist`  
