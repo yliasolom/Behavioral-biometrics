@@ -103,6 +103,12 @@
 ```mermaid
 flowchart TB
 
+style Prep fill:#86c7e9,stroke:#ffffff,stroke-width:2px;
+style Modeling fill:#a2d5a5,stroke:#ffffff,stroke-width:2px;
+style Optimization fill:#ffb347,stroke:#ffffff,stroke-width:2px;
+style TechDebt fill:#f0a6ca,stroke:#ffffff,stroke-width:2px;
+style Additional fill:#e0e0e0,stroke:#ffffff,stroke-width:2px;
+
 subgraph Prep
   A((Исходные данные))
   B((Подготовка данных))
@@ -113,26 +119,30 @@ subgraph Modeling
   C((Выбор и обучение модели))
   D((Оценка модели))
   C --> D
+  B --> C
 end
 
 subgraph Optimization
   E((Тюнинг и оптимизация))
   F((Тестирование и оценка результатов))
   E --> F
+  D --> E
 end
 
 subgraph TechDebt
   G((Оптимизация кода и обработка ошибок))
   H((Подготовка данных и тестирование на пилоте))
   G --> H
+  F --> G
 end
 
-I((Дополнительные шаги))
-
-B --> C
-D --> E
-F --> G
-H --> I
+subgraph Additional
+  I((Дополнительные шаги))
+  A --> I
+  C --> I
+  E --> I
+  H --> I
+end
 ```
 ########################################################################
 #### 2.3. Этапы решения задачи `Data Scientist`  
