@@ -30,7 +30,7 @@ python main.py
 Описание:
 GaitRecognitionSystem - это веб-сервис для распознавания походки человека с использованием технологий глубокого обучения. Репозиторий предоставляет инструменты для работы с этим сервисом.
 
-![GaitRecognitionSystem](https://www.mermaidchart.com/raw/abb6a130-f29e-4246-a4ad-c8721d1b8a07?theme=light&version=v0.1&format=svg)
+![GaitRecognitionSystem](https://github.com/yliasolom/Behavioral-biometrics/blob/main/Untitled%20diagram-2023-11-28-000013.svg)
 
 
 
