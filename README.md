@@ -28,39 +28,28 @@ python main.py
 Программа идентификации лиц и лица предназначена для обнаружения и идентификации лиц на изображениях размером 30x30 пикселей с использованием суперразрешения изображений EDSR, в то время как идентификация по походке осуществляется на основе набора силуэтов (здесь НЕТ ОГРАНИЧЕНИЙ на ввод, что означает, что он может содержать любое количество несмежных силуэтов, снятых под разными углами обзора при разных условиях ходьбы).
 
 ```mermaid
-  graph TD
-  style Database fill:white,stroke:#000;
-  style Client fill:white,stroke:#000;
-  style GaitRecognitionModule fill:white,stroke:#000;
-  style FlaskWebApp fill:white,stroke:#000;
-  style DeepLearning fill:white,stroke:#000;
-
-    subgraph "Client"
-      A[User Interface] -->|HTTP Request| B[FlaskWebApp]
-    end
-
-    subgraph "FlaskWebApp"
-      B -->|Processes Request| C[GaitRecognitionModule]
-      C -->|Returns Response| A
-    end
+graph TD
+    A[Веб-интерфейс] -->|HTTP запрос| B[FlaskWebApp]
+    B -->|Обработка запроса| C[GaitRecognitionModule]
+    C -->|Отправка ответа| A
 
     subgraph "GaitRecognitionModule"
-      D[GaitProcessor]
-      C -->|Manages Gait Database| E[GaitDatabase]
-      C -->|Utilizes Gait Models| F[GaitModels]
-      D -->|Capturing, 
-      Segmentation, 
-      Contour Detection,
-      Feature Extraction| B
+        D[GaitProcessor]
+        C -->|Управление базой данных по походке| E[GaitDatabase]
+        C -->|Использование моделей по походке| F[GaitModels]
+        D -->|Захват, 
+        Сегментация, 
+        Обнаружение контура,
+        Извлечение признаков| B
     end
 
     subgraph "Database"
-      G[SQLite Database] -->|Stores Data| H[data]
-      G -->|Stores Data| I[db]
+        G[База данных SQLite] -->|Хранение данных| H[data]
+        G -->|Хранение данных| I[db]
     end
 
     subgraph "DeepLearning"
-      J[model] -->|Object Detection| K[YOLOv8]
+        J[Модель] -->|Обнаружение объектов| K[YOLOv8]
     end
 ```
 
