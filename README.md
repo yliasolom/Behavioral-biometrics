@@ -67,6 +67,6 @@ style DeepLearning fill:white,stroke:#000;
   subgraph "DeepLearning"
     J[model] -->|Object Detection| K[YOLOv8]
   end
-
+```
 
 
