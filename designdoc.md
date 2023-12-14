@@ -139,11 +139,6 @@
 - `Feature Data Storage`: Хранит извлеченные признаки.
 - `Model Storage`: Хранит обученную модель.
 
-*Стили:*
-- Сенсоры и видеокамеры: fill:#86B402, stroke:#4CAF50, stroke-width:2px;
-- API и сервисы: fill:#FFC107, stroke:#FF9800, stroke-width:2px;
-- Базы данных: fill:#2196F3, stroke:#1565C0, stroke-width:2px;
-
 ########################################################################
 #### 2.3. Этапы решения задачи `Data Scientist`  
 
