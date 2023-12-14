@@ -313,7 +313,8 @@ graph TD
   style subgraph cluster_processing fill:#FFC107,stroke:#FF9800,stroke-width:2px;
   style subgraph cluster_model fill:#2196F3,stroke:#1565C0,stroke-width:2px;
   style subgraph cluster_api fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px;
-
+end
+```
 #### 4.2. Описание инфраструктуры и масштабируемости 
   
 - Какая инфраструктура выбрана и почему `Data Scientist` 
