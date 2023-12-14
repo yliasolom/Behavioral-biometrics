@@ -102,41 +102,49 @@
    - Подготовить документацию по проекту, включая инструкции по использованию системы и план развития проекта для будущих итераций.
 ------------------------------------------------------------------------------------------------
 #### 2.2. Блок-схема решения  
-```mermaid
-flowchart TB
+### Бэкенд Архитектура
 
-style Prep fill:#86c7e9,stroke:#ffffff,stroke-width:2px;
-style Modeling fill:#a2d5a5,stroke:#ffffff,stroke-width:2px;
-style Optimization fill:#ffb347,stroke:#ffffff,stroke-width:2px;
-style TechDebt fill:#f0a6ca,stroke:#ffffff,stroke-width:2px;
+Схема архитектуры бэкенда:
 
-subgraph Prep
-  A((Исходные данные))
-  B((Подготовка данных))
-  A --> B
-end
+1. **Сенсоры и видеокамеры**
+   - Отправка сырых данных по походке на `Data Ingestion API`.
 
-subgraph Modeling
-  C((Выбор и обучение модели))
-  D((Оценка модели))
-  C --> D
-  B --> C
-end
+2. **Data Ingestion API**
+   - Принимает сырые данные от сенсоров и видеокамер.
+   - Сохраняет данные в базу данных `Raw Data Storage`.
 
-subgraph Optimization
-  E((Тюнинг и оптимизация))
-  F((Тестирование и оценка результатов))
-  E --> F
-  D --> E
-end
+3. **Data Processing Service**
+   - Асинхронно обрабатывает сырые данные из `Raw Data Storage`.
+   - Производит фильтрацию и предобработку.
+   - Сохраняет обработанные данные в `Processed Data Storage`.
 
-subgraph TechDebt
-  G((Оптимизация кода и обработка ошибок))
-  H((Подготовка данных и тестирование на пилоте))
-  G --> H
-  F --> G
-end
-```
+4. **Feature Extraction Service**
+   - Извлекает признаки по походке из обработанных данных.
+   - Использует результаты и сохраняет в `Feature Data Storage`.
+
+5. **Machine Learning Model Service**
+   - Обучает и тестирует модель машинного обучения на данных из `Feature Data Storage`.
+   - Сохраняет обученную модель в `Model Storage`.
+
+6. **Identification API**
+   - Обеспечивает API для идентификации личности по походке.
+   - Взаимодействует с обученной моделью из `Model Storage`.
+
+7. **Integration API**
+   - Предоставляет API для интеграции с основной системой.
+   - Обеспечивает взаимодействие между идентификацией личности и основной системой.
+
+*Базы данных:*
+- `Raw Data Storage`: Хранит сырые данные.
+- `Processed Data Storage`: Хранит обработанные данные.
+- `Feature Data Storage`: Хранит извлеченные признаки.
+- `Model Storage`: Хранит обученную модель.
+
+*Стили:*
+- Сенсоры и видеокамеры: fill:#86B402, stroke:#4CAF50, stroke-width:2px;
+- API и сервисы: fill:#FFC107, stroke:#FF9800, stroke-width:2px;
+- Базы данных: fill:#2196F3, stroke:#1565C0, stroke-width:2px;
+
 ########################################################################
 #### 2.3. Этапы решения задачи `Data Scientist`  
 
