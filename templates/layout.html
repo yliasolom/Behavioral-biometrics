@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Gait Recognition System</title>
-        <link rel="icon" type="image/x-icon" href="/static/img/favicon.svg">
+        <title>Распознавание походки</title>
+{#        <link rel="icon" type="image/x-icon" href="/static/img/favicon.svg">#}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
         {{ toastr.include_jquery() }}
@@ -16,7 +16,7 @@
         {% endblock %}
     </head>
 
-    <body>
+    <body > {#style="background-color: #ccc"#}
         {{ toastr.include_toastr_js() }}
         {% include 'includes/navbar.html' %}
 
