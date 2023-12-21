@@ -39,7 +39,7 @@ def upload_file():
                 tag, message = register(person_name, vid_file)
             else:
                 tag = False
-                message = "Invalid name or video, please check and re-upload."
+                message = "Недействительное видео. Проверьте и загрузите повторно."
 
             status = 'success' if tag else 'warning'
             flash(message, status)  # 显示message
@@ -60,7 +60,7 @@ def gait_recognition():
             if vid_file and allowed_file(vid_file.filename):
                 tag, message = register(person_name, vid_file)
             else:
-                message = "Invalid video, please check and re-upload."
+                message = "Недействительное видео. Проверьте и загрузите повторно."
 
             if tag:
                 tmp_image_path = os.path.sep.join([STATIC_TMP_FOLDER, "image"])

@@ -21,7 +21,7 @@ if (!!window.EventSource) {
             if (values[0]['similarity'] * 100 > 50) {
                 recName = keys[0].split("-")[0];
             }
-            document.getElementById('gaitResult').innerHTML = `Person is recognized as <strong class="text-danger">${recName}.</strong>`;
+            document.getElementById('gaitResult').innerHTML = `Человек распознан как <strong class="text-danger">${recName}.</strong>`;
             document.getElementById('spinner1').style.display = 'none';
 
             curDataLength = keys.length;

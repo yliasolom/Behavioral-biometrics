@@ -51,7 +51,7 @@ def register(person_name, vid_file):
     vname = vid + "." + filename.rsplit('.', 1)[-1].lower()
 
     if md5_exists(vmd5):  # 查询vid是否存在
-        message = "Video exists, please upload another!"
+        message = "Видео уже было загруженно, пожалуйста, загрузите другое!"
     else:
         tag = True
         print()
@@ -100,10 +100,10 @@ def register(person_name, vid_file):
                 copy_file(person_image, static_image)
                 rename_dir_file(static_image)  # avoid http web cache problem
 
-            message = f"person name: {person_name} pid: {pid} video name: {filename} vid: {vid} valid frame: {frame_nums}"
+            message = f"Имя человека: {person_name} pid: {pid} название видео: {filename} видео: {vid} кадров: {frame_nums}"
         else:
             tag = False
-            message = f"{vid}: no valid data."
+            message = f"{vid}: нет данных."
 
         print()
         t4 = time_sync()
