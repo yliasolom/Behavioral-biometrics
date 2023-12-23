@@ -203,6 +203,8 @@
 - `Processed Data Storage`: Хранит обработанные данные.
 - `Feature Data Storage`: Хранит извлеченные признаки.
 - `Model Storage`: Хранит обученную модель.
+- 
+![Блок-схема решения](https://github.com/yliasolom/Behavioral-biometrics/raw/main/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82.png)
 
 #### 2.3. Этапы решения задачи `Data Scientist`  
 
